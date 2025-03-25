@@ -1,7 +1,7 @@
 
-export const DarkLightMode = ({isDarkMode, HandleMode}) => {
+export const DarkLightMode = ({isDarkMode, HandleMode, style}) => {
   return (
-      <div>
+      <div className={style}>
 
           <button onClick={HandleMode}>
               {isDarkMode ? 'Mode Light' : 'Mode Dark'}

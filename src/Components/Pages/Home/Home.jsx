@@ -1,5 +1,7 @@
+import { ColorGenerator } from "../../Layouts/absoluteColors/AbsoluteColors.jsx";
 import { DarkLightMode } from "../../Layouts/DarkLightMode/DarkLightMode.jsx"
 import { LikeDislikeBtn } from "../../Layouts/LikeDislikeBtn/LikeDislikeBtn.jsx";
+import { SecondsCounter } from "../../Layouts/SecondsCounter/SecondsCounter.jsx";
 import './Home.css';
 import { useState } from "react";
 
@@ -13,8 +15,10 @@ export const Home = () => {
 
     return (
         <div className={`StyleHome ${isDarkMode ? 'dark' : 'light'}`}>
-            <DarkLightMode isDarkMode={isDarkMode} HandleMode={HandleMode} />
+            <DarkLightMode style={"containerMode"} isDarkMode={isDarkMode} HandleMode={HandleMode} />
             <LikeDislikeBtn/>
+            <ColorGenerator/>
+            <SecondsCounter/>
         </div>
     )
 }
