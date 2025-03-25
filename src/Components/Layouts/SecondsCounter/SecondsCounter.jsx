@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 
-export const SecondsCounter = () => {
+export const SecondsCounter = ( {style}) => {
   const [segundos, setSegundos] = useState(0);
   const intervalRef = useRef(null);
 
@@ -19,7 +19,7 @@ export const SecondsCounter = () => {
   };
 
   return (
-    <div style={{ textAlign: 'center', marginTop: '20px' }}>
+    <div className={style}>
       <h1>Segundos: {segundos}</h1>
       <button onClick={iniciarContador}>Iniciar</button>
       <button onClick={pararContador} style={{ marginLeft: '10px' }}>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export const AbsoluteColors = [
+const AbsoluteColors = [
     "#FF0000", "#00FF00", "#0000FF",
     "#FFFF00", "#FF00FF", "#00FFFF",
     "#000000", "#FFFFFF", "#808080",
@@ -9,7 +9,7 @@ export const AbsoluteColors = [
     "#A52A2A"
 ];
 
-export const ColorGenerator = () => {
+export const ColorGenerator = ({style}) => {
     const [color, setColor] = useState('#FFFFFF');
 
     const HandleColor = () => {
@@ -18,7 +18,7 @@ export const ColorGenerator = () => {
     };
 
     return (
-        <div style={{ backgroundColor: color, height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
+        <div className={style} style={{ backgroundColor: color }}>
             <button onClick={HandleColor}>Generar Color</button>
             <p style={{ color: color === '#000000' ? '#FFF' : '#000' }}>Color actual: {color}</p>
         </div>

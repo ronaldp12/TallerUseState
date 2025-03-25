@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export const LikeDislikeBtn = () => {
+export const LikeDislikeBtn = ({style}) => {
   const [likes, setLikes] = useState(0);
   const [dislikes, setDislikes] = useState(0);
 
@@ -13,10 +13,10 @@ export const LikeDislikeBtn = () => {
   }
 
   return (
-    <div>
-      <button onClick={handleLike}>Like ({likes})</button>
+    <div className={style}>
+      <button onClick={handleLike}>Like <i class="bi bi-hand-thumbs-up"></i> ({likes})</button>
       <button onClick={handleDislikes} style={{ marginLeft: '10px' }}>
-        Dislike ({dislikes})
+        Dislike <i class="bi bi-hand-thumbs-down"></i> ({dislikes})
       </button>
     </div>
   );
